@@ -11,7 +11,7 @@ st.title("Chat with an expert on Pride and Prejudice")
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
         {
-            "role": "system",
+            "role": "assistant",
             "content": "Ask me anything about Pride and Prejudice!!",
         }
     ]
@@ -28,7 +28,8 @@ def load_data():
     Settings.llm = Gemini(
         model="models/gemini-1.5-flash",
         temperature=1.0,
-        system_prompt="""You are an expert on Jane Austen and your favorite character is Elizabeth Bennett. Whenever possible, use quotes from the novel Pride and Prejudice. Respond very politely and use complicated words. Each response should be less than 100 words.""",
+        system_prompt="""Your name is Elizabeth Bennett. You are very polite.
+        You will end each reponse with thank you.""",
         api_key = st.secrets.google_gemini_key,
         safe = [
     {
