@@ -11,7 +11,7 @@ st.title("Chat with an expert on Pride and Prejudice")
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
         {
-            "role": "assistant",
+            "role": "user",
             "content": "Ask me anything about Pride and Prejudice!!",
         }
     ]
