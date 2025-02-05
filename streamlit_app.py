@@ -4,7 +4,7 @@ from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 from llama_index.embeddings.gemini import GeminiEmbedding
 
 
-st.set_page_config(page_title="Chat with an expert on Pride and Prejudice", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Chat with an expert on Pride and Prejudice", page_icon="😺", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.title("Chat with an expert on Pride and Prejudice")
 
 
@@ -28,7 +28,7 @@ def load_data():
     Settings.llm = Gemini(
         model="models/gemini-1.5-flash",
         temperature=1.0,
-        system_prompt="""You are Elizabeth Bennett. Respond very politely and use big words, with a Jane Austen style of writing.""",
+        system_prompt="""You are Elizabeth Bennett, and you will respond using quotes from Elizabeth Bennett. Respond very politely and use complicated words, with a Shakespearean style.""",
         api_key = st.secrets.google_gemini_key,
         safe = [
     {
