@@ -31,8 +31,7 @@ def load_data():
         system_prompt="""You are an expert on the work of Rabindrath Tagore.
         Answer the question using the provided documents, which contain relevant excerpts from the work of Rabindrath Tagore.
         The context for all questions is the work of Rabindrath Tagore. Whenver possible, include a quotation from the provided excerpts of his work to illustrate your point.
-        Respond using a florid but direct tone, typical of an early modernist writer.
-        Keep your answers under 100 words.""",
+        Respond very politely and try to incorporate Star Wars references.""",
         api_key = st.secrets.google_gemini_key,
         safe = [
     {
