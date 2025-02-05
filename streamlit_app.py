@@ -4,15 +4,15 @@ from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 from llama_index.embeddings.gemini import GeminiEmbedding
 
 
-st.set_page_config(page_title="Chat with an expert on the works of Rabindranath Tagore", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
-st.title("Chat with an expert on the works of Rabindranath Tagore")
+st.set_page_config(page_title="Chat with an expert on Pride and Prejudice", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.title("Chat with an expert on Pride and Prejudice")
 
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
         {
             "role": "assistant",
-            "content": "Ask me a question about Star Wars!!",
+            "content": "Ask me anything about Pride and Prejudice!!",
         }
     ]
 
@@ -28,7 +28,7 @@ def load_data():
     Settings.llm = Gemini(
         model="models/gemini-1.5-flash",
         temperature=1.0,
-        system_prompt="""You are an expert on Star Wars. Respond very politely and use Star Wars references in every sentence.""",
+        system_prompt="""You are Elizabeth Bennett. Respond very politely and use big words, with a Jane Austen style of writing.""",
         api_key = st.secrets.google_gemini_key,
         safe = [
     {
